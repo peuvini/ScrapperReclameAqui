@@ -6,12 +6,14 @@ from selenium.webdriver.common.by import By
 from selenium.common.exceptions import TimeoutException
 import pandas as pd
 import time
+import undetected_chromedriver as uc
+from selenium import webdriver
 
 def reclameAqui(chrome_options=None):
     # Configurações do navegador
     options = chrome_options or Options()
     options.add_argument("--start-maximized")
-    driver = webdriver.Chrome(options=options)
+    driver = uc.Chrome(options=options)
     
     # Abre a página
     wait = WebDriverWait(driver, 10)
